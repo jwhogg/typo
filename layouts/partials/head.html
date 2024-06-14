@@ -19,6 +19,10 @@
 {{ partialCached "head/js.html" . }}
 
 {{ if hugo.IsProduction }}
-{{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
 {{ end }}
+
+{{ if .Site.Params.gtm_id}}{{- partial "gtm.html" . }}{{ end }}
+
+
 
